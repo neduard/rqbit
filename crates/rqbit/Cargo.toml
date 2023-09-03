@@ -10,8 +10,8 @@ default = ["sha1-system", "default-tls"]
 sha1-system = ["librqbit/sha1-system"]
 sha1-openssl = ["librqbit/sha1-openssl"]
 sha1-rust = ["librqbit/sha1-rust"]
-default-tls = ["librqbit/default-tls"]
-rust-tls = ["librqbit/rust-tls"]
+default-tls = ["librqbit/default-tls", "reqwest/default-tls"]
+rust-tls = ["librqbit/rust-tls", "reqwest/rustls"]
 
 [dependencies]
 librqbit = {path="../librqbit", default-features=false}
@@ -24,7 +24,7 @@ pretty_env_logger = "0.4"
 regex = "1"
 futures = "0.3"
 parse_duration = "2"
-reqwest = "*"
+reqwest = {version = "0.11", default-features=false}
 serde = {version = "1", features=["derive"]}
 serde_json = "1"
 size_format = "1"
